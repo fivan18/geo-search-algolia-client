@@ -1,9 +1,9 @@
 /* global instantsearch */
 
 const search = instantsearch({
-  appId: 'B1G2GM9NG0',
-  apiKey: 'aadef574be1f9252bb48d4ea09b5cfe5',
-  indexName: 'demo_geo',
+  appId: '1XZKX6MEB2',
+  apiKey: 'bf77b3fd471c6b6a50dbc0e6234607c0',
+  indexName: 'dev_geosearch',
   searchParameters: {
     hitsPerPage: 6,
     getRankingInfo: true,
@@ -37,9 +37,8 @@ search.addWidget(
         click: ({ item, marker, map }) => {
           if (InfoWindow.getMap()) InfoWindow.close()
           InfoWindow.setContent(
-            `${item.name} - ${item.name === item.city ? '' : `${item.city}, `}${
-              item.country
-            }<br>${item.nb_airline_liaisons} liaisons`
+            `${item.country} - ${item.city}
+            <br>${item.town_hall}`
           )
           InfoWindow.open(map, marker)
         }
